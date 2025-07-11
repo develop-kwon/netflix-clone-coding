@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:netflix_ui/screen/home_screen.dart';
 import 'package:netflix_ui/screen/more_screen.dart';
+import 'package:netflix_ui/screen/search_screen.dart';
 import 'package:netflix_ui/widget/bottom_bar.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
@@ -44,7 +46,7 @@ class _MyAppState extends State<MyApp> {
             physics: NeverScrollableScrollPhysics(),
             children: [
               HomeScreen(),
-              Container(child: Center(child: Text('search'))),
+              SearchScreen(),
               Container(child: Center(child: Text('save'))),
               MoreScreen(),
             ],

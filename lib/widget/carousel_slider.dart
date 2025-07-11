@@ -24,9 +24,7 @@ class _CarouselImageState extends State<CarouselImage> {
   void initState() {
     super.initState();
     movies = widget.movies;
-    images = movies
-        .map((m) => Image.asset('assets/images/' + m.poster))
-        .toList();
+    images = movies.map((m) => Image.network(m.poster)).toList();
     keywords = movies.map((m) => m.keyword).toList();
     likes = movies.map((m) => m.like).toList();
     _currentKeyword = keywords[0];
@@ -41,7 +39,6 @@ class _CarouselImageState extends State<CarouselImage> {
           CarouselSlider(
             items: images,
             options: CarouselOptions(
-              autoPlay: true,
               onPageChanged: (index, reason) {
                 setState(() {
                   _currentPage = index;
@@ -66,6 +63,9 @@ class _CarouselImageState extends State<CarouselImage> {
                               onPressed: () {
                                 setState(() {
                                   likes[_currentPage] = false;
+                                  movies[_currentPage].reference.update({
+                                    'like': likes[_currentPage],
+                                  });
                                 });
                               },
                               icon: Icon(Icons.check),
@@ -74,6 +74,9 @@ class _CarouselImageState extends State<CarouselImage> {
                               onPressed: () {
                                 setState(() {
                                   likes[_currentPage] = true;
+                                  movies[_currentPage].reference.update({
+                                    'like': likes[_currentPage],
+                                  });
                                 });
                               },
                               icon: Icon(Icons.add),
