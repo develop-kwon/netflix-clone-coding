@@ -3,6 +3,7 @@
 import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
 import 'package:flutter/foundation.dart'
     show defaultTargetPlatform, kIsWeb, TargetPlatform;
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 /// Default [FirebaseOptions] for use with your Firebase apps.
 ///
@@ -49,16 +50,16 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDBnITM7aL0vzczK7D077KYaVUTQxTsApE',
+  static FirebaseOptions get android => FirebaseOptions(
+    apiKey: dotenv.env['ANDROID_API_KEY']!,
     appId: '1:895502589144:android:7ad5c793e9666b6e264bad',
     messagingSenderId: '895502589144',
     projectId: 'netflix-clone-test-53662',
     storageBucket: 'netflix-clone-test-53662.firebasestorage.app',
   );
 
-  static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyDCz_216vCZ4XARXvimrX-UwtKZpy1mIMU',
+  static FirebaseOptions get ios => FirebaseOptions(
+    apiKey: dotenv.env['IOS_API_KEY']!,
     appId: '1:895502589144:ios:9cff7c55d4b74a8a264bad',
     messagingSenderId: '895502589144',
     projectId: 'netflix-clone-test-53662',

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:netflix_ui/screen/home_screen.dart';
 import 'package:netflix_ui/screen/more_screen.dart';
 import 'package:netflix_ui/screen/search_screen.dart';
@@ -11,10 +12,14 @@ void main() async {
   // Firebase 초기화를 위해 Flutter 바인딩 먼저 초기화
   WidgetsFlutterBinding.ensureInitialized();
 
+  // .env 파일 로드 (비동기)
+  await dotenv.load(fileName: ".env"); // 추가
+
   // Firebase 초기화
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+
   runApp(MyApp());
 }
 
