@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:netflix_ui/screen/home_screen.dart';
+import 'package:netflix_ui/screen/like_screen.dart';
 import 'package:netflix_ui/screen/more_screen.dart';
 import 'package:netflix_ui/screen/search_screen.dart';
 import 'package:netflix_ui/widget/bottom_bar.dart';
@@ -52,7 +53,7 @@ class _MyAppState extends State<MyApp> {
             children: [
               HomeScreen(),
               SearchScreen(),
-              Container(child: Center(child: Text('save'))),
+              LikeScreen(),
               MoreScreen(),
             ],
           ),

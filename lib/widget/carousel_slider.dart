@@ -39,6 +39,7 @@ class _CarouselImageState extends State<CarouselImage> {
           CarouselSlider(
             items: images,
             options: CarouselOptions(
+              autoPlay: true,
               onPageChanged: (index, reason) {
                 setState(() {
                   _currentPage = index;
