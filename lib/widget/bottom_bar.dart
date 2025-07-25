@@ -7,7 +7,7 @@ class Bottom extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.black,
-      child: Container(
+      child: SizedBox(
         width: 50,
         child: TabBar(
           labelColor: Colors.white,

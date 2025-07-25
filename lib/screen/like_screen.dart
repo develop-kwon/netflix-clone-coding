@@ -60,7 +60,7 @@ class _LikeScreenState extends State<LikeScreen> {
       child: Column(
         children: [
           Container(
-            padding: EdgeInsets.fromLTRB(20, 27, 20, 7),
+            padding: EdgeInsets.fromLTRB(20, 60, 20, 7),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [

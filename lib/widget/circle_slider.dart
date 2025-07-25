@@ -15,7 +15,7 @@ class CircleSlider extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text('미리보기'),
-          Container(
+          SizedBox(
             height: 120,
             child: ListView(
               scrollDirection: Axis.horizontal, // 좌우로 스크롤

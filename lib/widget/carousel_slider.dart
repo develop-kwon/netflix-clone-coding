@@ -138,7 +138,7 @@ class _CarouselImageState extends State<CarouselImage> {
   }
 }
 
-List<Widget> makeIndicator(List list, int _currentPage) {
+List<Widget> makeIndicator(List list, int currentPage) {
   List<Widget> results = [];
   for (var i = 0; i < list.length; i++) {
     results.add(
@@ -148,7 +148,7 @@ List<Widget> makeIndicator(List list, int _currentPage) {
         margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 2.0),
         decoration: BoxDecoration(
           shape: BoxShape.circle,
-          color: _currentPage == i
+          color: currentPage == i
               ? Color.fromRGBO(255, 255, 255, 0.9)
               : Color.fromRGBO(255, 255, 255, 0.4),
         ),
